@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ruby Jin — Digital Art Portfolio</title>
+  <meta name="description" content="Digital art portfolio of Ruby Jin featuring standalone digital artworks, concepts, and visual explorations.">
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+  <link rel="stylesheet" href="styles/global.css" type="text/css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Ruby Jin</h1>
+    <h2>Digital Art ✰ Standalone Works</h2>
+
+    <nav>
+      <nav>
+      <a href="index.html">Home</a> |
+      <a href="./about/about.html">About</a> |
+      <a href="cclab/index.html">CCLab</a> |
+      <a href="artworks/artworks.html">Works</a>
+    </nav>
+
+    </nav>
+  </header>
+
+  <div class="theme-button-container">
+    <button id="dark-toggle" class="theme-button">Toggle Dark Mode</button>
+  </div>
+
+  <main>
+    <article>
+      <h2>Welcome to Ruby’s digital art portfolio.</h2>
+      <p>
+        This website presents a collection of my standalone digital artworks.
+        Each piece is an <em>independent visual exploration</em>, not part of a larger series.
+      </p>
+
+      <h3>A Message from Future Ruby Jin (Renayu Jin)</h3>
+      <p>
+        Ten years ago, I arrived in an unfamiliar place to study and experienced my first confession.
+        These two moments still shape me today: the determination to keep learning, and the lessons from failure.
+        Over the years, I have faced challenges both small—like fixing a broken light bulb—and large,
+        like my restless desire to always travel, which often distracted me from my work.
+        Now, I feel at home in the fields I love.
+        I never stop creating, even when it brings pain, because it also brings meaning.
+      </p>
+
+      <h3>On This Site, You Will Find</h3>
+      <ul class="flex-list">
+        <li>Digital paintings</li>
+        <li>Concept based illustrations</li>
+        <li>Experimental visual studies on mood and color</li>
+      </ul>
+    </article>
+
+    <hr>
+
+    <section class="featured-work">
+      <h3>Featured Works</h3>
+      <div class="flex-list images-row">
+        <img src="images/Noa.png" alt="Sample artwork 1">
+        <img src="images/untitled1.jpg" alt="Sample artwork 2">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ruby Jin (Renayu Jin). All rights reserved.</p>
+    <p>Email: <a href="mailto:renayujin@outlook.com">renayujin@outlook.com</a></p>
+  </footer>
+
+  <script>
+    const darkToggleBtn = document.getElementById("dark-toggle");
+
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark");
+    }
+
+    darkToggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("darkMode", "enabled");
+      } else {
+        localStorage.setItem("darkMode", "disabled");
+      }
+    });
+  </script>
+
+</body>
+</html>

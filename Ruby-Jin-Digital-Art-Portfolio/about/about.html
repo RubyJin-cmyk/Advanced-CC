@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About — Ruby Jin</title>
+  <meta name="description" content="About Ruby Jin — digital art, creative coding, and interactive media.">
+  <link rel="stylesheet" href="../styles/global.css" type="text/css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Ruby Jin</h1>
+    <h2>About</h2>
+
+    <nav>
+      <a href="../index.html">Home</a> |
+      <a href="./about.html">About</a> |
+      <a href="../cclab/index.html">CCLab</a> |
+      <a href="../artworks/artworks.html">Works</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Education</h2>
+      <p>
+        I’m currently a sophomore exploring the space where art meets technology.
+        My projects often blend illustration, interactive sketches, and creative coding,
+        allowing me to experiment with new ways of making ideas tangible.
+      </p>
+    </section>
+
+    <section>
+      <h2>Hobbies & Interests</h2>
+      <p>
+        I enjoy illustration and sketching, and after discovering creative technology,
+        I’ve also become interested in physical making—working with Arduino,
+        soldering, and hands-on experimentation.
+        Combining digital and physical creation has become an important part of my practice.
+      </p>
+    </section>
+
+    <section>
+      <h2>Career Goals</h2>
+      <p>
+        I hope to work in creative coding, interactive media, or digital art,
+        where I can combine artistic expression with technical skills
+        to create experiences that feel playful, thoughtful, and personal.
+      </p>
+    </section>
+
+    <section>
+      <h2>Reflections on Technology & Coding</h2>
+      <p>
+        Coding and technology feel like new brushes in my creative toolkit.
+        They allow me to transform ideas—whether digital sketches or interactive installations—
+        into experiences that can be seen, touched, or interacted with,
+        giving form to concepts in ways traditional media cannot.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ruby Jin</p>
+    <p>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a> |
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    </p>
+  </footer>
+
+  <script>
+    const darkToggleBtn = document.getElementById("dark-toggle");
+
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark");
+    }
+
+    darkToggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("darkMode", "enabled");
+      } else {
+        localStorage.setItem("darkMode", "disabled");
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: "Courier New", "Lucida Console", monospace; /* 保留 typewriter vibe */
+  background: linear-gradient(135deg, #fff0f5, #fce4ec); /* 淡紫到粉色渐变 */
+  color: #333;
+}
+
+/* Page layout */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  gap: 16px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ff6f91;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #ffdce0;
+  color: #ff2f7a;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #ff6f91;
+  text-align: left; /* 改为靠左 */
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-top: 30px;
+  margin-bottom: 12px;
+  color: #ff4f81;
+  text-align: left; /* 改为靠左 */
+}
+
+/* Paragraphs */
+p {
+  line-height: 1.6;
+  text-align: left; /* 改为靠左 */
+  color: #555;
+}
+
+/* Project iframe cards */
+iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  border: 2px solid #ff6f91;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(255,111,145,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+iframe:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255,111,145,0.5);
+}
+
+/* Responsive padding */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+}
+.intro {
+  margin-bottom: 40px;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.project-card h2 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.project-preview {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.project-link {
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.project-card {
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* 悬浮效果 */
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-color: #a98fd3;
+}
+
+/* 标题微变化（很克制） */
+.project-card:hover h2 {
+  color: #6a4fb3;
+}
+
+/* 链接 hover 强化 */
+.project-link {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.project-card:hover .project-link {
+  color: #6a4fb3;
+  text-decoration: underline;
+}

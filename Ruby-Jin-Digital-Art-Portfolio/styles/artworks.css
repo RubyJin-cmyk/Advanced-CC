@@ -1,0 +1,145 @@
+/* Base Page Layout */
+body {
+  margin: 0;
+  background: #f9f9f9;
+  color: #111;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+body.dark {
+  background: #111;
+  color: #eee;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+}
+h1 { font-size: 2.4rem; margin-bottom: 0.3rem; font-weight: 600; }
+h2 { font-size: 1.1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin: 0.5rem 0 1.5rem; }
+
+nav a {
+  text-decoration: none;
+  color: #222;
+  margin: 0 0.6rem;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+body.dark nav a { color: #eee; }
+nav a:hover { background: #333; color: #fff; }
+
+/* ========================
+   Buttons
+======================== */
+.theme-button-container,
+.gallery-button {
+  text-align: center;
+  margin: 1.5rem 0rem;
+}
+
+.theme-button,
+.gallery-button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid #222;
+  transition: 0.2s;
+}
+.theme-button { background: #fff; color: #222; }
+.theme-button:hover { background: #222; color: #fff; }
+body.dark .theme-button { background: #222; color: #eee; border-color: #eee; }
+body.dark .theme-button:hover { background: #eee; color: #222; }
+
+.gallery-button { background: #fff; color: #222; display: block; margin: 0 auto 2rem; }
+.gallery-button:hover { background: #222; color: #fff; }
+body.dark .gallery-button { background: #222; color: #eee; border-color: #eee; }
+body.dark .gallery-button:hover { background: #eee; color: #222; }
+
+/* ========================
+   Main Content
+======================== */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.artwork {
+  margin-bottom: 4rem;
+}
+.artwork figure { margin: 0 0 1.5rem; text-align: center; }
+.artwork img { width: 100%; max-width: 700px; height: auto; object-fit: contain; border-radius: 6px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
+.artwork h3, .artwork time, .artwork p { display: block; }
+.artwork h3 { font-size: 1.4rem; margin-bottom: 0.3rem; }
+.artwork time { font-size: 0.9rem; opacity: 0.7; margin-bottom: 0.4rem; }
+
+/*Gallery Grid Mode */
+#artworks-main.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* 每个作品在网格模式下只显示图片 */
+#artworks-main.gallery-grid .artwork {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0; /* 网格自动控制间距 */
+}
+
+/* 图片完整呈现 */
+#artworks-main.gallery-grid .artwork figure {
+  width: 100%;
+}
+
+#artworks-main.gallery-grid .artwork figure img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* 保持完整图片 */
+  border-radius: 6px;
+}
+
+/* 隐藏文字和时间线 */
+#artworks-main.gallery-grid .artwork .description,
+#artworks-main.gallery-grid .artwork .timeline {
+  display: none;
+}
+
+/* Closing Note 跨整行 */
+#artworks-main.gallery-grid .closing-note {
+  grid-column: 1 / -1;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+body.dark #artworks-main.gallery-grid .closing-note {
+  border-color: #444;
+}
+
+/* Closing Note */
+.closing-note {
+  text-align: center;
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ccc;
+}
+body.dark .closing-note { border-color: #444; }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: #666;
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+body.dark footer { background: #111; color: #ccc; border-color: #444; }
+body.dark footer a { color: #9ecaff; }
+footer a { color: inherit; }

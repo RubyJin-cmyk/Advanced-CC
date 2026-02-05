@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Works — Ruby Jin</title>
+  <meta name="description" content="Artwork gallery of Ruby Jin featuring digital illustrations, concepts, and visual storytelling.">
+  <link rel="icon" type="image/x-icon" href="../favicon/favicon.ico">
+  <link rel="stylesheet" href="../styles/style.css" type="text/css">
+  <link rel="stylesheet" href="../styles/artworks.css" type="text/css">
+  <style>
+    #artworks-main { max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+    .artwork { display: flex; flex-direction: row; align-items: flex-start; margin-bottom: 4rem; }
+    .artwork figure { margin: 0; flex-shrink: 0; width: auto; max-width: 60%; }
+    .artwork figure img { width: 100%; height: auto; object-fit: contain; border-radius: 6px; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+    .artwork .description { margin-left: 2rem; max-width: 35%; font-size: 0.95rem; line-height: 1.5; }
+    .artwork time { display: block; font-size: 0.85rem; color: #888; margin-bottom: 0.5rem; }
+    #artworks-main.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+    #artworks-main.gallery-grid .artwork { display: block; }
+    #artworks-main.gallery-grid .artwork figure { max-width: 100%; margin-bottom: 0.5rem; }
+    #artworks-main.gallery-grid .artwork figure img { width: 100%; height: auto; object-fit: contain; border-radius: 6px; }
+    #artworks-main.gallery-grid .artwork .description, #artworks-main.gallery-grid .artwork time { display: none; }
+    #artworks-main.gallery-grid .closing-note { grid-column: 1 / -1; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ccc; text-align: center; }
+    .closing-note { text-align: center; margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #ccc; }
+    body.dark .closing-note { border-color: #444; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ruby Jin</h1>
+    <h2>Works</h2>
+    <nav>
+        <a href="../index.html">Home</a> |
+        <a href="../about/about.html">About</a> |
+        <a href="../cclab/index.html">CCLab</a> |
+        <a href="artworks/artworks.html">Works</a>
+    </nav>
+  </header>
+
+  <div class="theme-button-container">
+    <button id="dark-toggle" class="theme-button">Toggle Dark Mode</button>
+  </div>
+
+  <button id="gallery-toggle" class="gallery-button">Toggle Layout</button>
+
+  <main id="artworks-main">
+    <article class="artwork">
+      <figure><img src="../images/heypig.JPG" alt="Hey Pig illustration"></figure>
+      <div class="description">
+        <time datetime="2025-09-16">2025/9/16</time>
+        <h3>Hey Pig</h3>
+        <p>In this illustration, I depict a pair of shoes exhibited at the FIT Museum. I want to use this item to metaphor a relationship. The text comes from a song I listened to while painting. It conveys a mix of contempt and provocation toward the other person, yet also an intimate helplessness.</p>
+      </div>
+    </article>
+
+    <article class="artwork">
+      <figure><img src="../images/Noa.png" alt="Noa illustration"></figure>
+      <div class="description">
+        <time datetime="2025-07-26">2025/7/26</time>
+        <h3>Noa</h3>
+        <p>This illustration is based on my initial concept for Noa, a bio android “imperfect” due to design flaws. She gradually understands herself and envies humans’ ability to connect physically and spiritually.</p>
+      </div>
+    </article>
+
+    <article class="artwork">
+      <figure><img src="../images/untitled2.jpg" alt="Untitled 2 illustration"></figure>
+      <div class="description">
+        <time datetime="2025-02-20">2025/2/20</time>
+        <h3>Untitled 2</h3>
+        <p>This piece explores the fragile tension between two people, where intimacy and violence coexist. The arrow piercing the heart becomes a symbol of this duality.</p>
+      </div>
+    </article>
+
+    <article class="artwork">
+      <figure><img src="../images/untitled1.jpg" alt="Untitled 1 illustration"></figure>
+      <div class="description">
+        <time datetime="2025-02-01">2025/2/1</time>
+        <h3>Untitled 1</h3>
+        <p>Inspired by Helter Skelter, this work reflects obsession with appearance and fame. The strawberry eye mask and golden face embody allure and decay, while the crown suggests distorted glory.</p>
+      </div>
+    </article>
+
+    <footer class="closing-note">
+      <h2>Closing Note</h2>
+      <p>I invite you to explore these works at your own pace.</p>
+    </footer>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ruby Jin (Renayu Jin). All rights reserved.</p>
+    <p>Email: <a href="mailto:renayujin@outlook.com">renayujin@outlook.com</a></p>
+  </footer>
+
+  <script>
+    const darkToggleBtn = document.getElementById("dark-toggle");
+    const galleryToggleBtn = document.getElementById("gallery-toggle");
+    const mainEl = document.getElementById("artworks-main");
+
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark");
+    }
+
+    darkToggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("darkMode", "enabled");
+      } else {
+        localStorage.setItem("darkMode", "disabled");
+      }
+    });
+
+    galleryToggleBtn.addEventListener("click", () => {
+      mainEl.classList.toggle("gallery-grid");
+    });
+
+    const artworks = document.querySelectorAll(".artwork img");
+    artworks.forEach(img => {
+      img.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+      img.style.border = '3px solid rgba(0,0,0,0.2)';
+      img.style.borderRadius = '8px';
+      img.style.cursor = 'pointer';
+      let isHighlighted = false;
+
+      img.addEventListener('mouseover', () => {
+        img.style.transform = 'scale(1.03)';
+        if (!isHighlighted) img.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+      });
+      img.addEventListener('mouseout', () => {
+        img.style.transform = 'scale(1)';
+        if (!isHighlighted) img.style.boxShadow = '0 0 0 transparent';
+      });
+      img.addEventListener('click', () => {
+        isHighlighted = !isHighlighted;
+        img.style.boxShadow = isHighlighted
+          ? '0 0 15px 5px rgba(255,160,0,0.6)'
+          : '0 10px 20px rgba(0,0,0,0.2)';
+      });
+    });
+  </script>
+</body>
+</html>
