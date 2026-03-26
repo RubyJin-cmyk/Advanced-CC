@@ -2,21 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ruby's CCLab Portfolio</title>
+  <title>CCLab Portfolio</title>
   <link rel="stylesheet" href="../styles/style.css" />
 </head>
 
 <body>
 
   <header class="site-header">
-    <h1 class="title">Ruby's CCLab Portfolio ♡</h1>
+    <h1 class="title">Ruby Jin</h1>
+    <h2>CCLab Portfolio</h2>
 
     <nav class="nav">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-      </ul>
+      <a href="../index.html">Home</a>
+      <a href="../about/about.html">About</a>
+      <a href="../artworks/artworks.html">Works</a>
     </nav>
   </header>
+
+  <div class="theme-button-container">
+    <button id="dark-toggle" class="theme-button">Toggle Dark Mode</button>
+  </div>
 
   <main class="content">
 
@@ -27,10 +32,39 @@
       </p>
     </section>
 
+    <section class="featured-works">
+      <h3>Interactive Typography</h3>
+
+      <div class="featured-grid">
+        <div class="featured-piece">
+          <iframe
+            src="https://editor.p5js.org/jinr760/full/INzSYlSfs"
+            title="Interactive Typography 1">
+          </iframe>
+        </div>
+
+        <div class="featured-piece">
+          <iframe
+            src="https://editor.p5js.org/jinr760/full/I93X7G9EF"
+            title="Interactive Typography 2">
+          </iframe>
+        </div>
+
+        <div class="featured-piece">
+          <iframe
+            src="https://editor.p5js.org/jinr760/full/H74BPfMhg"
+            title="Interactive Typography 3">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
     <section class="project-list">
 
       <article class="project-card">
-        <h2>Project 1</h2>
+        <h3>Project 1</h3>
         <p class="project-preview">
           This project translates a written description by my partner into a p5.js sketch.
         </p>
@@ -38,7 +72,7 @@
       </article>
 
       <article class="project-card">
-        <h2>Project 2</h2>
+        <h3>Project 2</h3>
         <p class="project-preview">
           An interactive face that changes expression with mouse movement.
         </p>
@@ -46,7 +80,7 @@
       </article>
 
       <article class="project-card">
-        <h2>Project 3</h2>
+        <h3>Project 3</h3>
         <p class="project-preview">
           An interactive taco clock where the sauce flows through the shell.
         </p>
@@ -54,7 +88,7 @@
       </article>
 
       <article class="project-card">
-        <h2>Project 4</h2>
+        <h3>Project 4</h3>
         <p class="project-preview">
           An assembled character created from body parts contributed by my partners.
         </p>
@@ -62,7 +96,7 @@
       </article>
 
       <article class="project-card">
-        <h2>Project 5</h2>
+        <h3>Project 5</h3>
         <p class="project-preview">
           A piece inspired by 3D star-glasses.
         </p>
@@ -70,7 +104,7 @@
       </article>
 
       <article class="project-card">
-        <h2>Project 6</h2>
+        <h3>Project 6</h3>
         <p class="project-preview">
           An emotional data portrait visualizing my sleep patterns as raindrops and waves.
         </p>
@@ -78,9 +112,9 @@
       </article>
 
       <article class="project-card">
-        <h2>Project 7</h2>
+        <h3>Project 7</h3>
         <p class="project-preview">
-          a narrative-driven autobiographical game exploring the tension between self-perception and mental health.
+          A narrative-driven autobiographical game exploring the tension between self-perception and mental health.
         </p>
         <a class="project-link" href="project7.html">View project →</a>
       </article>
@@ -88,6 +122,30 @@
     </section>
 
   </main>
+
+  <footer>
+    <p>&ed.</p>
+  </footer>
+
+  <script>
+    const darkToggleBtn = document.getElementById("dark-toggle");
+
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark");
+    }
+
+    if (darkToggleBtn) {
+      darkToggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+          localStorage.setItem("darkMode", "enabled");
+        } else {
+          localStorage.setItem("darkMode", "disabled");
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
